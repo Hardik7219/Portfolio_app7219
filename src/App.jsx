@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import logo from './assets/logo.jpeg'
 import Typing from './componets/Typing'
@@ -7,6 +7,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css';
 import Skill from './componets/Skill'
 import Project from './componets/Project'
+
 
 let skillImg={
 	js:'https://icon.icepanel.io/Technology/svg/JavaScript.svg',
@@ -93,6 +94,21 @@ function App() {
 			window.removeEventListener("scroll", scrollHandler);
 		}
 	},[]);
+
+	let bgCol=useRef(null)
+
+
+  useEffect(() => {
+    let hue = 0;
+    const changeTe = setInterval(() => {
+      // smooth color cycling
+      bgCol.current.style.background = `linear-gradient(0deg,hsl(${hue}, 15%, 16%),hsl(${hue}, 100%, 16%)`;
+      hue = (hue + 1) % 360;
+    }, 20); // changes color every 20ms
+
+    return () => clearInterval(changeTe);
+  }, []);
+
 	return (
     	<>
 			<div ref={headerRef1} className='header flex items-center '>
@@ -114,7 +130,7 @@ function App() {
   						msg="HARDIK7219"
   						style1={{ color:"red", fontFamily: "monospace",
 						background: "linear-gradient(to right,rgb(18, 2, 241),rgb(8, 147, 240))",
-						backgroundClip:"text",WebkitTextFillColor: "transparent",fontWeight:"bold"}}
+						backgroundClip:"text",WebkitTextFcontact1illColor: "transparent",fontWeight:"bold"}}
   						speed={100}
   						eraseSpeed={50}
   						pauseTime={1000}
@@ -123,11 +139,11 @@ function App() {
 						/>
 					</div>
 				</div>
-			<div className='main-menu  p-0 m-0 flex  flex-col items-center justify-center'>
+			<div  className='main-menu  p-0 m-0 flex  flex-col items-center justify-center'>
 				
-				<div className='menu flex flex-col items-center justify-center'>
+				<div  className='menu flex flex-col items-center justify-center'>
 
-					<div className='about1 flex items-center'>
+					<div  className='about1 flex items-center'>
 						<img src={logo} alt="logo"
 						className='logo ml-[3em]' data-aos="fade-right" 
 						data-aos-duration="1000" data-aos-offset="300" />
@@ -138,11 +154,11 @@ function App() {
 							<h3>COLLAGE STUDENT STUDYING BCA</h3>
 						</div>
 					</div >
-					<div className=' skill1 flex flex-col items-center p-3 '>
+					<div   className=' skill1 flex flex-col items-center p-3 '>
 						<div className='skills p-2 grid grid-cols-4' >
 							<div onMouseOver={(e) => {
 								dis(e.target);
-							}}className="skill-col skill-1" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300" style={{backgroundImage:`url(${skillImg.py})`}}>
+							}}className="skill-col  skill-1" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300" style={{backgroundImage:`url(${skillImg.py})`}}>
 							</div>
 							<div onMouseOver={(e) => {
 								dis(e.target);
@@ -175,8 +191,8 @@ function App() {
 								<Skill detail={detail1}></Skill>
 						</div>
 					</div>
-					<div className='projects1'>
-							<div className='p-2 grid grid-cols-4'>
+					<div ref={bgCol} className='projects1 flex justify-center items-center'>
+							<div className='project-sec grid grid-cols-2 bg-center justify-items-center grid-rows-2'>
 								<div>
 									<Project proName="portfolio" link="https://github.com/Hardik7219/portfolioWebsite"></Project>
 								</div>
@@ -189,30 +205,7 @@ function App() {
 								<div>
 									<Project proName="calculator_app" link="https://github.com/Hardik7219/Calculator_7219"></Project>
 								</div>
-								<div>
-									<Project proName="form-bottom-change" link="https://github.com/Hardik7219/Form_button_changs_7219"></Project>
-								</div>
-								<div>
-									<Project proName="Project 1" link=""></Project>
-								</div>
-								<div>
-									<Project proName="Project 1" link=""></Project>
-								</div>
-								<div>
-									<Project proName="Project 1" link=""></Project>
-								</div>
-								<div>
-									<Project proName="Project 1" link=""></Project>
-								</div>
-								<div>
-									<Project proName="Project 1" link=""></Project>
-								</div>
-								<div>
-									<Project proName="Project 1" link=""></Project>
-								</div>
-								<div>
-									<Project proName="Project 1" link=""></Project>
-								</div>
+								
 
 							</div>
 					</div>

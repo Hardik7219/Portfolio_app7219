@@ -14,7 +14,7 @@ html{
 /*navbar*/
 .header{
 	background-color: var(--header);
-	height: 6rem;
+	height: 3rem;
 	width: 100%;
 	z-index: 1;
 	position: fixed;
@@ -22,40 +22,44 @@ html{
 .header ol{
 	gap:50px;
 	margin: 50px;
-	font-size: 30px;
+	font-size: 14px;
 	color: rgb(31, 211, 243);
+	background: linear-gradient(90deg,rgb(23, 226, 253),rgb(140, 0, 255));
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
 }
 .header ol li{
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-weight: 600;
 	transition: all 0.2s ease-in;
+		
+
+	/* text-shadow: 0 0 0px rgb(11, 233, 214); */
+
+}
+.header ol li:hover{
+	cursor: pointer;
+
 	background: linear-gradient(90deg,rgb(255, 193, 78),rgb(255, 74, 2));
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	text-shadow: 0px 0px 10px rgb(247, 123, 7);
 }
-.header ol li:hover{
-	cursor: pointer;
-	background: linear-gradient(90deg,blue,red);
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-	text-shadow: 0 0 5px rgb(145, 235, 227);
-}
 .header ol li:hover .l{
 	background: linear-gradient(90deg , rgb(253, 0, 253) , rgb(20, 208, 255));
-	height: 5px;
+	height: 3px;
 	width: auto;
 	transition: all 0.2s ease-in;
 }
 .bo{
-	height: 6rem;
+	height: 3rem;
 	width: 7px;
 	position: absolute;
 	border-radius: 0px 0px 0px 0px;
-	background: linear-gradient(0deg, rgb(255, 193, 78),rgb(255, 74, 2));
+	background: linear-gradient(0deg, rgb(23, 226, 253),rgb(140, 0, 255));
 }
 .header:hover .bo{
-	background: linear-gradient(0deg, rgb(20, 208, 255), rgb(253, 0, 253));
+	background: linear-gradient(0deg, rgb(255, 193, 78),rgb(255, 74, 2));
 	transition: all 0.2s ease-in;
 }
 /*main body */
@@ -210,7 +214,7 @@ html{
 	}
 }
 .skill1{
-	height: 50rem;
+	height: 55rem;
 	width: 100%;
 	border-bottom: 10px rgb(2, 12, 26) inset;
 	border-top: 10px rgb(142, 142, 248) inset;
@@ -247,7 +251,7 @@ html{
 	margin-top: 20px;
 	height: 30rem;
 	width: 70rem;
-	background-color: rgb(236, 231, 158);
+	background-color: hsl(56, 67%, 77%);
 	border-radius: 10px;
 }
 .skill-col:hover{
@@ -255,10 +259,27 @@ html{
 	transform: scale(1.1);
 	cursor: pointer;
 	border: 2px solid rgb(255, 255, 255);
+	box-shadow: 0px 0px 20px 6px rgb(23, 226, 253);
 }
 /*projects*/
 .projects1{
-	height: 80rem;
+	height: 50rem;
 	width: 100%;
 
+}
+.project-sec{
+	height: 47em;
+	width: 98%;
+}
+
+
+
+
+
+
+/*contacts-temp*/
+.contact1
+{
+	height: 80rem;
+	width: 100%;
 }
