@@ -7,6 +7,9 @@ import Aos from 'aos'
 import 'aos/dist/aos.css';
 import Skill from './componets/Skill'
 import Project from './componets/Project'
+// import { HashLink as Link } from "react-router-hash-link";
+// import { BrowserRouter as Router } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 
 let skillImg={
@@ -111,6 +114,8 @@ function App() {
 
 	return (
     	<>
+		{/* <Router> */}
+
 			<div ref={headerRef1} className='header flex items-center '>
 				<div className='bo'></div>
 				<ol className='flex'>
@@ -131,10 +136,10 @@ function App() {
   						style1={{ color:"red", fontFamily: "monospace",
 						background: "linear-gradient(to right,rgb(18, 2, 241),rgb(8, 147, 240))",
 						backgroundClip:"text",WebkitTextFcontact1illColor: "transparent",fontWeight:"bold"}}
-  						speed={100}
-  						eraseSpeed={50}
-  						pauseTime={1000}
-  						cursorBlinkSpeed={400}
+						speed={100}
+						eraseSpeed={50}
+						pauseTime={1000}
+						cursorBlinkSpeed={400}
 						style2={"text-8xl border-b-9 border-b-purple-400"}
 						/>
 					</div>
@@ -191,7 +196,7 @@ function App() {
 								<Skill detail={detail1}></Skill>
 						</div>
 					</div>
-					<div ref={bgCol} className='projects1 flex justify-center items-center'>
+					<div id="#project" ref={bgCol} className='projects1 flex justify-center items-center'>
 							<div className='project-sec grid grid-cols-2 bg-center justify-items-center grid-rows-2'>
 								<div>
 									<Project proName="portfolio" link="https://github.com/Hardik7219/portfolioWebsite"></Project>
@@ -214,6 +219,7 @@ function App() {
 					</div>
 				</div>
 			</div>
+		{/* </Router> */}
     	</>
 	)
 }
