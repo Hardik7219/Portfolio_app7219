@@ -24,7 +24,34 @@ function App() {
 	let headerRef1=useRef(null);
 	let homeRef2=useRef(null);
 	let [detail1,setDetail1]=React.useState("");
+	let [proLink,setProLink]=useState([
+		'https://github.com/Hardik7219/portfolioWebsite',
+		'https://github.com/Hardik7219/Currency_converter_7219',
+		'https://github.com/Hardik7219/Rock_paper_scissor_game_7219',
+		'https://github.com/Hardik7219/Calculator_7219'
+	])
+	let [proName1,setProName1]=useState([
+		'Portfolio Website',
+		'Currency Converter',
+		'Rock Paper Scissor Game',
+		'Calculator'
+	])
 	useEffect(()=>{Aos.init()},[])
+
+	const proChange=()=>{
+		setProName1([
+			'Calculator APP',
+			'Form Button Change',
+			'Portfolio APP',
+			'Text Editor'
+		])
+		setProLink([
+			'https://github.com/Hardik7219/calculatorApp_7219',
+			'https://github.com/Hardik7219/Form_button_changs_7219',
+			'https://github.com/Hardik7219/Portfolio_app7219',
+			''
+		])
+	}
 	const dis=(e)=>{
 	  	document.querySelectorAll(".skill-col").forEach((el) => el.classList.remove("blu"));
   		e.classList.add("blu");
@@ -191,26 +218,34 @@ function App() {
 								<Skill detail={detail1}></Skill>
 						</div>
 					</div>
-					<div ref={bgCol} className='projects1 flex justify-center items-center'>
+					<div ref={bgCol} className='projects1 flex flex-col justify-center items-center'>
 							<div className='project-sec grid grid-cols-2 bg-center justify-items-center grid-rows-2'>
 								<div>
-									<Project proName="portfolio" link="https://github.com/Hardik7219/portfolioWebsite"></Project>
+									<Project proName={proName1[0]} link={proLink[0]}></Project>
 								</div>
 								<div>
-									<Project proName="currency-converter" link="https://github.com/Hardik7219/Currency_converter_7219"></Project>
+									<Project proName={proName1[1]} link={proLink[1]}></Project>
 								</div>
 								<div>
-									<Project proName="rock-paper-scissor_game" link="https://github.com/Hardik7219/Rock_paper_scissor_game_7219"></Project>
+									<Project proName={proName1[2]} link={proLink[2]}></Project>
 								</div>
 								<div>
-									<Project proName="calculator_app" link="https://github.com/Hardik7219/Calculator_7219"></Project>
+									<Project proName={proName1[3]} link={proLink[3]}></Project>
 								</div>
 								
 
 							</div>
+							<div className=' flex justify-center'>
+								<button onClick={proChange} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300" className='show_1'>SHOWMORE</button>
+							</div>
 					</div>
-					<div className='contact1'>
-						
+					<div className='contact1 flex items-center justify-center'>
+						<div className='form1 p-10'>
+							<form className='flex flex-col gap-10'>
+								<input placeholder="EMAIL" className='i1' type="email"></input>
+								<input  placeholder="MESSAGE" className="i2	" type='text'></input>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
