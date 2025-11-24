@@ -342,7 +342,7 @@ html{
 	/*navbar*/
 	.header{
 		height: 3rem;
-		width: 26.9rem;
+		width: 100vh;
 	}
 	.header ol{
 		gap:3px;
