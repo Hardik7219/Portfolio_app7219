@@ -162,17 +162,17 @@ function App() {
   						eraseSpeed={50}
   						pauseTime={1000}
   						cursorBlinkSpeed={400}
-						style2={"text-8xl border-b-9 border-b-purple-400"}
+						style2={"text-2xl sm:text-8xl border-b-9 border-b-purple-400"}
 						/>
 					</div>
 				</div>
-			<div  className='main-menu  p-0 m-0 flex  flex-col items-center justify-center'>
+			<div  className='main-menu flex  flex-col items-center justify-center'>
 				
 				<div  className='menu flex flex-col items-center justify-center'>
 
 					<div  className='about1 flex items-center'>
 						<img src={logo} alt="logo"
-						className='logo ml-[3em]' data-aos="fade-right" 
+						className='logo ' data-aos="fade-right" 
 						data-aos-duration="1000" data-aos-offset="300" />
 						<div className='abt  text-2xl ml-[15em] overflow-hidden' data-aos="fade-left" 
 						data-aos-duration="1000" data-aos-offset="300">
