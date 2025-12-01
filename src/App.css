@@ -20,9 +20,9 @@ html{
 	position: fixed;
 }
 .header ol{
-	gap:50px;
-	margin: 50px;
-	font-size: 14px;
+	gap:2rem;
+	margin: 3rem;
+	font-size: 1.2rem;
 	color: rgb(31, 211, 243);
 	background: linear-gradient(90deg,rgb(23, 226, 253),rgb(140, 0, 255));
 	-webkit-text-fill-color: transparent;
@@ -46,13 +46,13 @@ html{
 }
 .header ol li:hover .l{
 	background: linear-gradient(90deg , rgb(253, 0, 253) , rgb(20, 208, 255));
-	height: 3px;
+	height: 0.3rem;
 	width: auto;
 	transition: all 0.2s ease-in;
 }
 .bo{
 	height: 3rem;
-	width: 7px;
+	width: 0.4rem;
 	position: absolute;
 	border-radius: 0px 0px 0px 0px;
 	background: linear-gradient(0deg, rgb(23, 226, 253),rgb(140, 0, 255));
@@ -65,10 +65,11 @@ html{
 
 .main-menu{
 	background-image: var(--main-home);
+	min-width: 1200px;
 	width: 100%;
 	height: calc(100%-80px);
-	gap:150px;
-	padding: 90px;
+	gap:5rem;
+	padding: 2rem;
 }
 
 .about1, .skill1 , .projects1, .contact1{
@@ -85,12 +86,12 @@ html{
 
 /*home*/
 .home1{
-	padding: 20px;
 	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(4, 1, 20, 0.8) 100%), url('/src/assets/home.jpeg');
 	background-size: cover;
-  	height: 60rem; 
+	min-height: 80vh;
+  	height: auto; 
 	overflow: hidden;
-
+	width: 100%;
 }
 .home1::after{
 	content: "";
@@ -98,7 +99,7 @@ html{
 	bottom: 0;
 	left: 0;
 	right: 0;
-  	height: 150px; 
+  	height: 60rem; 
 	background: rgba(0, 0, 8, 0.7);
   	filter: blur(70px);
 }
@@ -106,14 +107,14 @@ html{
 	cursor: pointer;
 }
 .msg{
-	top: 200px;
+	top: 10rem;
 	position:absolute;
 	height: 20em;
 	width: auto;
 }
 /*MENU*/
 .menu{
-	gap:80px;
+	gap:4rem;
 	width: 95%;
 	
 }
@@ -161,7 +162,7 @@ html{
 	position: relative;
 }
 .abt h1{
-	margin-top: 150px;
+	margin-top: 5rem;
 	color: aliceblue;
 	font-size: 2em;
 	font-family: 'Tangerine',cursive;
@@ -170,22 +171,16 @@ html{
 	text-shadow: rgb(0, 255, 221) 10px 0 0px,
 }
 .abt h2{
-	margin-top: 20px;
+	margin-top: .7rem;
 	color:aquamarine;
 	font-size: 1.5em;
 }
 .abt h3{
 	color: greenyellow;
 	font-size: 1.4em;
-	margin-top: 20px;
+	margin-top: .7rem;
 }
 
-@media(max-width:450){
-		.about1{
-			height: 7%;
-			font-size: 2px;
-		}
-}
 @keyframes load1 {
 	0% {
 		right: 1100px;
@@ -232,7 +227,7 @@ html{
 .skills{
 	width: 100%;
 	height: 20rem;
-	gap: 20px;
+	gap: 1.2rem;
 	justify-items: center;
 	align-items: center;
 	background-color: var(--home-sub-sec);
@@ -336,76 +331,5 @@ html{
 	scale: 1.1;	
 }
 
-/**/
-@media(max-width: 600px)
-{
-	/*navbar*/
-	.header{
-		height: 3rem;
-		width: 100vh;
-	}
-	.header ol{
-		gap:3px;
-		margin: 50px;
-		font-size: 10px;
-	}
-	.bo{
-		height: 3rem;
-		width: 3px;
-	}
-	.header:hover .bo{
-		background: linear-gradient(0deg, rgb(255, 193, 78),rgb(255, 74, 2));
-		transition: all 0.2s ease-in;
-	}
-	.menu{
-		width: 20rem;
-	}
-	/*home*/
-	.home1{
-		height: 300px;
-	}
-	.msg{
-		top:90px;
-	}
-	/*main-mune*/
 
-	/*ABOUT*/
-	.about1{
-		height: 10rem;
-		width: 25rem;
-	}
-	.logo{
-		height: 4em;
-		width: 3em;
-	}
-	.logo:hover{
-	box-shadow: -2px -10px 10px -3px rgb(41, 234, 248),
-	9px 3px 10px -3px rgb(83, 247, 83),
-	-14px 8px 10px -10px rgb(255, 63, 63);
-	scale: 1.02;
-	cursor: pointer;
-	}
-	.abt{	
-	height: 5em;
-	width: 5em;
-	}
-	.abt h1{	
-	margin-top: 150px;
-	color: aliceblue;
-	font-size: 1em;
-	font-family: 'Tangerine',cursive;
-	font-weight: 400;
-	font-style: normal;
-	text-shadow: rgb(0, 255, 221) 10px 0 0px,
-	}
-	.abt h2{
-	margin-top: 20px;
-	color:aquamarine;
-	font-size: 1.5em;
-	}
-	.abt h3{
-	color: greenyellow;
-	font-size: 1.4em;
-	margin-top: 20px;
-	}
-}
+
