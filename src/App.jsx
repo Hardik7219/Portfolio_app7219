@@ -162,7 +162,7 @@ function App() {
   						eraseSpeed={50}
   						pauseTime={1000}
   						cursorBlinkSpeed={400}
-						style2={"text-2xl sm:text-8xl border-b-9 border-b-purple-400"}
+						style2={"text-2xl sm:text-8xl border-b-2 border-b-purple-400"}
 						/>
 					</div>
 				</div>
@@ -170,13 +170,13 @@ function App() {
 				
 				<div  className='menu flex flex-col items-center justify-center'>
 
-					<div  className='about1 flex items-center'>
+					<div  className='about1 flex items-center justify-between'>
 						<img src={logo} alt="logo"
 						className='logo ' data-aos="fade-right" 
 						data-aos-duration="1000" data-aos-offset="300" />
-						<div className='abt  text-2xl ml-[15em] overflow-hidden' data-aos="fade-left" 
+						<div className='abt  overflow-hidden' data-aos="fade-left" 
 						data-aos-duration="1000" data-aos-offset="300">
-							<h1 className='text-4xl'>HARDIK M PARMAR</h1>
+							<h1 className=''>HARDIK M PARMAR</h1>
 							<h2>I AM A PROGRAMMER</h2>
 							<h3>COLLAGE STUDENT STUDYING BCA</h3>
 						</div>
@@ -210,10 +210,10 @@ function App() {
 							}}className="skill-col skill-8" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300" style={{backgroundImage:`url(${skillImg.java})`}}></div>
 						</div>
 						<div className='skill-det border-3 gap-6 border-black flex items-center'>
-							<div className='h-60 w-10 flex flex-col  justify-center gap-4 items-center rounded-4xl bg-black m-3'>
-								<div className="h-5 w-5 rounded-full bg-red-500"></div>
-								<div className="h-5 w-5 rounded-full bg-green-300"></div>
-								<div className="h-5 w-5 rounded-full bg-blue-800"></div>
+							<div className='flex flex-col  justify-center items-center rounded-4xl bg-black'>
+								<div className="h-3 w-3 rounded-full bg-red-500"></div>
+								<div className="h-3 w-3 rounded-full bg-green-300"></div>
+								<div className="h-3 w-3 rounded-full bg-blue-800"></div>
 							</div>
 								<Skill detail={detail1}></Skill>
 						</div>
@@ -235,7 +235,7 @@ function App() {
 								
 
 							</div>
-							<div className=' flex justify-center'>
+							<div className=' btn_div flex justify-center'>
 								<button onClick={proChange} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300" className='show_1'>SHOWMORE</button>
 							</div>
 					</div>
