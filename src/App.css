@@ -542,16 +542,16 @@ html{
 .det{
 	background-color: rgb(7, 30, 49);
 	height: 26rem;
-	width: 70%;
+	width: 80%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
 }
-.skill-img{
+.det div{
 	height: 50rem;
-	width: 50rem;
+	width: 90rem;
 }
 .det p{
 	font-size: 3rem
@@ -601,10 +601,6 @@ html{
 	scale: 1.1;
 	color:greenyellow ;
 }
-
-
-
-
 
 /*contacts-temp*/
 .contact1
