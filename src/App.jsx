@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { use, useState } from 'react'
 import './App.css'
 import logo from './assets/logo.jpeg'
 import Typing from './componets/Typing'
@@ -7,6 +7,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css';
 import Skill from './componets/Skill'
 import Project from './componets/Project'
+import { set } from 'animejs'
 
 
 let skillImg={
@@ -36,21 +37,42 @@ function App() {
 		'Rock Paper Scissor Game',
 		'Calculator'
 	])
+	let [pro_label,setPro_label]=useState("SHOWMORE");
+	let [pro_state,setPro_state]=useState("");	
 	useEffect(()=>{Aos.init()},[])
-
+	useEffect(()=>{
+		if(pro_state=="next"){
+			setProName1([
+				'Calculator APP',
+				'Form Button Change',
+				'Portfolio APP',
+				'Text Editor'
+			])
+			setProLink([
+				'https://github.com/Hardik7219/calculatorApp_7219',
+				'https://github.com/Hardik7219/Form_button_changs_7219',
+				'https://github.com/Hardik7219/Portfolio_app7219',
+				''
+			])
+		}
+		else {
+			setProName1([
+				'Portfolio Website',
+				'Currency Converter',
+				'Rock Paper Scissor Game',
+				'Calculator'
+			])
+			setProLink([
+				'https://github.com/Hardik7219/portfolioWebsite',
+				'https://github.com/Hardik7219/Currency_converter_7219',
+				'https://github.com/Hardik7219/Rock_paper_scissor_game_7219',
+				'https://github.com/Hardik7219/Calculator_7219'
+			])
+		}
+	},[pro_state])
 	const proChange=()=>{
-		setProName1([
-			'Calculator APP',
-			'Form Button Change',
-			'Portfolio APP',
-			'Text Editor'
-		])
-		setProLink([
-			'https://github.com/Hardik7219/calculatorApp_7219',
-			'https://github.com/Hardik7219/Form_button_changs_7219',
-			'https://github.com/Hardik7219/Portfolio_app7219',
-			''
-		])
+		setPro_state(pro_state==""?"next":"");
+		setPro_label(pro_label=="BACK"?"SHOWMORE":"BACK");
 	}
 	const dis=(e)=>{
 	  	document.querySelectorAll(".skill-col").forEach((el) => el.classList.remove("blu"));
@@ -236,7 +258,7 @@ function App() {
 
 							</div>
 							<div className=' btn_div flex justify-center'>
-								<button onClick={proChange} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300" className='show_1'>SHOWMORE</button>
+								<button onClick={proChange} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300" className='show_1'>{pro_label}</button>
 							</div>
 					</div>
 					<div className='contact1 flex items-center justify-center'>
