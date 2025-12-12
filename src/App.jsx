@@ -266,6 +266,7 @@ function App() {
 							<form className='flex flex-col gap-10'>
 								<input placeholder="EMAIL" className='i1' type="email"></input>
 								<input  placeholder="MESSAGE" className="i2	" type='text'></input>
+								<input type="submit" className='submit_btn' value="SEND MESSAGE"></input>
 							</form>
 						</div>
 					</div>

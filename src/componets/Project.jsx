@@ -14,10 +14,10 @@ function Project(props) {
   return (
     <>
         <div data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300" className='pro border-2  bg-black 
-        bg-gray-950 rounded-md flex flex-col justify-center items-center'>
+        bg-gray-950 m-2 rounded-md flex flex-col justify-center items-center'>
             <div onClick={()=>pageLink(props.link)} 
             className='link2 group hover:cursor-pointer border-1 bg-gray-500 rounded-md hover:bg-gray-600 border-b-blue-950 flex items-center justify-center'>
-                <div  className=' invisible group-hover:visible bg-[url("https://icon.icepanel.io/Technology/png-shadow-512/GitHub.png")]
+                <div  className=' invisible group-hover:visible h-20 w-20 bg-[url("https://icon.icepanel.io/Technology/png-shadow-512/GitHub.png")]
                 bg-cover'></div>
             </div>
             <div className='title rounded-md m-1 flex justify-center items-center  border-1 text-3xl
