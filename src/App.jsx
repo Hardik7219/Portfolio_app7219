@@ -1,14 +1,11 @@
-import React, { use, useState } from 'react'
 import './App.css'
 import logo from './assets/logo.jpeg'
 import Typing from './componets/Typing'
-import { useEffect,useRef } from 'react'
+import { useEffect,useRef ,useState } from 'react'
 import Aos from 'aos'
 import 'aos/dist/aos.css';
 import Skill from './componets/Skill'
 import Project from './componets/Project'
-import { set } from 'animejs'
-
 
 let skillImg={
 	js:'https://icon.icepanel.io/Technology/svg/JavaScript.svg',
@@ -24,7 +21,7 @@ let skillImg={
 function App() {
 	let headerRef1=useRef(null);
 	let homeRef2=useRef(null);
-	let [detail1,setDetail1]=React.useState("");
+	let [detail1,setDetail1]=useState("");
 	let [proLink,setProLink]=useState([
 		'https://github.com/Hardik7219/portfolioWebsite',
 		'https://github.com/Hardik7219/Currency_converter_7219',
@@ -163,16 +160,16 @@ function App() {
 			<div ref={headerRef1} className='header flex items-center '>
 				<div className='bo'></div>
 				<ol className='flex'>
-					<li><i className="fa-solid fa-house"></i> HOME<div className='l'></div></li>
-					<li><i className='fa-solid fa-user'></i> ABOUT<div className='l'></div></li>
-					<li><i className="fa-solid fa-code"></i> SKILL<div className='l'></div></li>
-					<li><i class="fa-solid fa-microchip"></i> PROJECTS<div className='l'></div></li>
-					<li><i className='fa-solid fa-envelope-circle-check'></i> CONTACT<div className='l'></div></li>
-					<li><i className='fa-solid fa-file-word'></i> RESUME<div className='l'></div></li>
+					<li><i className="fa-solid fa-house"></i> <a href="#home" >HOME</a><div className='l'></div></li>
+					<li><i className='fa-solid fa-user'></i> <a href="#about" >ABOUT</a><div className='l'></div></li>
+					<li><i className="fa-solid fa-code"></i> <a href="#skill">SKILL</a><div className='l'></div></li>
+					<li><i className="fa-solid fa-microchip"></i> <a href="#project">PROJECTS</a><div className='l'></div></li>
+					<li><i className='fa-solid fa-envelope-circle-check'></i><a href="#contact">CONTACT</a><div className='l'></div></li>
+					<li><i className='fa-solid fa-file-word'></i> <a href="#resume">RESUME</a><div className='l'></div></li>
 				</ol>
 				<div className='bo  end-0'></div>
 			</div>
-			<div ref={homeRef2} className='home1 '>
+			<div id="home" ref={homeRef2} className='home1 '>
 					
 					<div className='msg' data-aos="fade-down-right">
 						<Typing
@@ -192,7 +189,7 @@ function App() {
 				
 				<div  className='menu flex flex-col items-center justify-center'>
 
-					<div  className='about1 flex items-center justify-between'>
+					<div id="about" className='about1 flex items-center justify-between'>
 						<img src={logo} alt="logo"
 						className='logo ' data-aos="fade-right" 
 						data-aos-duration="1000" data-aos-offset="300" />
@@ -203,7 +200,7 @@ function App() {
 							<h3>COLLAGE STUDENT STUDYING BCA</h3>
 						</div>
 					</div >
-					<div   className=' skill1 flex flex-col items-center p-3 '>
+					<div   id="skill"  className=' skill1 flex flex-col items-center p-3 '>
 						<div className='skills p-2 grid grid-cols-4' >
 							<div onMouseOver={(e) => {
 								dis(e.target);
@@ -229,9 +226,9 @@ function App() {
 							}}className="skill-col skill-7" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300" style={{backgroundImage:`url(${skillImg.tai})`}}></div>
 							<div onMouseOver={(e) => {
 								dis(e.target);
-							}}className="skill-col skill-8" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300" style={{backgroundImage:`url(${skillImg.java})`}}></div>
+							}}className="skill-col skill-8" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="100" style={{backgroundImage:`url(${skillImg.java})`}}></div>
 						</div>
-						<div className='skill-det border-3 gap-6 border-black flex items-center'>
+						<div  className='skill-det border-3 gap-6 border-black flex items-center'>
 							<div className='flex flex-col  justify-center items-center rounded-4xl bg-black'>
 								<div className="h-3 w-3 rounded-full bg-red-500"></div>
 								<div className="h-3 w-3 rounded-full bg-green-300"></div>
@@ -240,7 +237,7 @@ function App() {
 								<Skill detail={detail1}></Skill>
 						</div>
 					</div>
-					<div ref={bgCol} className='projects1 flex flex-col justify-center items-center'>
+					<div id="project" ref={bgCol} className='projects1 flex flex-col justify-center items-center'>
 							<div className='project-sec grid grid-cols-2 bg-center justify-items-center grid-rows-2'>
 								<div>
 									<Project proName={proName1[0]} link={proLink[0]}></Project>
@@ -254,19 +251,17 @@ function App() {
 								<div>
 									<Project proName={proName1[3]} link={proLink[3]}></Project>
 								</div>
-								
-
 							</div>
 							<div className=' btn_div flex justify-center'>
 								<button onClick={proChange} data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300" className='show_1'>{pro_label}</button>
 							</div>
 					</div>
-					<div className='contact1 flex items-center justify-center'>
+					<div id="contact" className='contact1 flex items-center justify-center'>
 						<div className='form1 p-10'>
 							<form className='flex flex-col gap-10'>
-								<input placeholder="EMAIL" className='i1' type="email"></input>
-								<input  placeholder="MESSAGE" className="i2	" type='text'></input>
-								<input type="submit" className='submit_btn' value="SEND MESSAGE"></input>
+								<label>EMAIL</label><input className='i1' type="email"/>
+								<label>MESSAGE</label><input  className="i2	" type='text'/>
+								<input type="submit" className='submit_btn' value="SEND MESSAGE"/>
 							</form>
 						</div>
 					</div>
